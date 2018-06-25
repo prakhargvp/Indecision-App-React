@@ -2,13 +2,15 @@ console.log("App.js is Running...");
 
 var app = {
 	title: 'Indecision App',
-	subtitle: 'This is Subtitle'
+	subtitle: 'This is Subtitle',
+	options: ['One', 'Two']
 };
 // JSX - Javascript XML
 var template = (
 	<div>
 		<h1>{app.title}</h1>
 		<p>{app.subtitle}</p>
+		<p>{app.options.length > 0 ? 'Here are your options' : 'No Options'}</p>
 		<ol>
 			<li>Item One</li>
 			<li>Item Two</li>
@@ -16,19 +18,34 @@ var template = (
 	</div>
 );
 
-var user = {
-	name: 'Prakhar',
-	age : 21,
-	location: 'Dehradun'
+let count = 0;
+const addOne = () => {
+	count++;
+	renderCounterApp();
+};
+const minusOne = () => {
+	count--;
+	renderCounterApp();
+};
+const reset = () => {
+	count = 0;
+	renderCounterApp();
 };
 
-var templateTwo = (
-	<div>
-		<h1>{user.name}</h1>
-		<p>Age: {user.age}</p>
-		<p>Location: {user.location}</p>
-	</div>
-);
+
+
 var appRoot  = document.getElementById('app');
 
-ReactDOM.render(template, appRoot);
+const renderCounterApp = () => {
+	const templateTwo = (
+	<div>
+		<h1>Count: {count}</h1>
+		<button onClick={addOne}>+1</button>
+		<button onClick={minusOne}>-1</button>
+		<button onClick={reset}>0</button>
+	</div>
+	);
+	ReactDOM.render(templateTwo, appRoot);
+};
+
+renderCounterApp();
