@@ -69,6 +69,21 @@ var IndecisionApp = function (_React$Component) {
 			});
 		}
 	}, {
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			console.log("Fetching Data");
+		}
+	}, {
+		key: 'componentDidUpdate',
+		value: function componentDidUpdate() {
+			console.log("Save Data");
+		}
+	}, {
+		key: 'componentWillUnmount',
+		value: function componentWillUnmount() {
+			console.log("Component Will Unmount");
+		}
+	}, {
 		key: 'render',
 		value: function render() {
 			var title = 'Indecision App';

@@ -37,6 +37,15 @@ class IndecisionApp extends React.Component{
 				options: prevState.options.concat(option)
 		}));
 	}
+	componentDidMount(){
+		console.log("Fetching Data");
+	}
+	componentDidUpdate(){
+		console.log("Save Data");
+	}
+	componentWillUnmount(){
+		console.log("Component Will Unmount");
+	}
 	render() {
 		const title    = 'Indecision App';
 		const subtitle = 'Put your life in the hands of a computer';
