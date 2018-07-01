@@ -6,5 +6,19 @@ module.exports = {
 	output: {
 		path: path.join(__dirname, 'public'),
 		filename: 'bundle.js'
+	},
+	module : {
+		// loader
+		// When webpack got .js or .... file then it will do .....
+		rules: [{
+			loader: 'babel-loader',
+			test: /\.js$/,	// regular expression
+			exclude: /node_modules/
+		}]
 	}
 };
+
+
+
+
+
