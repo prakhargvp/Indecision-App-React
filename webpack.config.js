@@ -16,10 +16,11 @@ module.exports = {
 			exclude: /node_modules/
 		},
 		{
-			test: /\.css$/,	// regular expression
+			test: /\.scss$/,	// regular expression
 			use: [
 				'style-loader',
-				'css-loader'
+				'css-loader',
+				'sass-loader'
 			]
 		}]
 	},
